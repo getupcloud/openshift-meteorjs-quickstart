@@ -1,6 +1,6 @@
 {
   "name": "OpenShift-Nodejs-Cartridge",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Node.js Cartridge for OpenShift",
   "keywords": [
     "OpenShift",
@@ -23,13 +23,16 @@
     "npm": ">= 1.0.0"
   },
   "dependencies": {
-    "fibers": "~1.0.0"
+    "fibers": "~1.0.0",
+    "underscore": "~1.8.3",
+    "source-map-support": "~0.3.1",
+    "semver": "~4.3.6"
   },
   "devDependencies": {},
   "bundleDependencies": [],
   "private": true,
   "scripts": {
-    "start": "node meteorshim.js"
+    "start": "node server.js"
   },
-  "main": "meteorshim.js"
+  "main": "server.js"
 }
