@@ -8,7 +8,7 @@ Se esta é a sua primeira vez usando [Getup Cloud OpenShift](http://getupcloud.c
 ## Configure seu gear OpenShift
 Crie uma nova aplicação OpenShift com [Node.js](http://nodejs.org), [MongoDB](http://www.mongodb.org/) e [o básico para ajudar o meteor.js conectar nas portas corretas](https://github.com/getupcloud/openshift-meteorjs-quickstart). Este exemplo usa o nome de aplicação "**meteor**"
 
-    rhc app create meteor nodejs-0.10 mongodb-2.2 --from-code=https://github.com/getupcloud/openshift-meteorjs-quickstart.git
+    rhc app create meteor nodejs-0.6 mongodb-2 --from-code=https://github.com/getupcloud/openshift-meteorjs-quickstart.git
 
 O comando acima irá produzir uma cópia local do código fonte de sua aplicação OpenShift em uma pasta com o mesmo nome da aplicação. Certifique-se de rodar esse comando em um diretório onde você gostaria de manter seus projetos.
 
@@ -19,12 +19,13 @@ Neste guia, usaremos o exemplo "leaderboard":
 
     meteor create --example leaderboard
 
+Esta apilcação deve ser criada __fora__ do repositório local da aplicação OpenShift.
 Veja [http://meteor.com/examples/](http://meteor.com/examples/) para conhecer todos os exemplo disponíveis. Sinta-se a vontade para testar todos eles.
 
 ## Empacote seu código meteor.js
 Empacote seu código meteor.js:
 
-    cd leaderboard # se voce escolheu o exemplo leaderboard
+    cd leaderboard              # se voce escolheu o exemplo leaderboard
     meteor bundle bundle.tar.gz # preparar para a publicação
 
 Em seguida, você precisa extrair o código resultante dentro do diretório de sua aplicação OpenShift (menos o diretório "bundle/" que o Meteor irá incluir automaticamente). Use a flag -k quando extrair para evitar que o código de conexão ao banco seja sobrescrito no processo de merge.
